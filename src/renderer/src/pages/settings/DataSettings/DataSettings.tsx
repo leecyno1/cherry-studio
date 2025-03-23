@@ -26,6 +26,7 @@ import { FC, useEffect, useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useSelector } from 'react-redux'
 import styled from 'styled-components'
+import { useLocation, useNavigate, Routes, Route } from 'react-router-dom'
 
 import {
   SettingContainer,
@@ -37,6 +38,7 @@ import {
   SettingTitle
 } from '..'
 import WebDavSettings from './WebDavSettings'
+import ZeaberSettings from './ZeaberSettings'
 
 // 新增的 NotionSettings 组件
 const NotionSettings: FC = () => {
@@ -297,11 +299,13 @@ const YuqueSettings: FC = () => {
   )
 }
 
-const DataSettings: FC = () => {
+const DataHome: FC = () => {
   const { t } = useTranslation()
   const [appInfo, setAppInfo] = useState<AppInfo>()
   const { size, removeAllFiles } = useKnowledgeFiles()
   const { theme } = useTheme()
+  const { pathname } = useLocation()
+  const navigate = useNavigate()
 
   useEffect(() => {
     window.api.getAppInfo().then(setAppInfo)
@@ -351,6 +355,10 @@ const DataSettings: FC = () => {
         danger: true
       }
     })
+  }
+
+  const isRoute = (path: string): string => {
+    return pathname.includes(path) ? 'active' : ''
   }
 
   return (
@@ -421,6 +429,30 @@ const DataSettings: FC = () => {
           </HStack>
         </SettingRow>
       </SettingGroup>
+      <SettingGroup theme={theme}>
+        <SettingTitle>{t('settings.data.sync.title')}</SettingTitle>
+        <SettingDivider />
+        <SettingRow>
+          <SettingRowTitle>{t('settings.data.webdav.title')}</SettingRowTitle>
+          <HStack alignItems="center" gap="5px" style={{ width: 315 }}>
+            <Button
+              onClick={() => navigate('/settings/data/webdav')}
+            >
+              {t('settings.data.webdav.title')}
+            </Button>
+          </HStack>
+        </SettingRow>
+        <SettingRow>
+          <SettingRowTitle>{t('settings.data.cloud.title')}</SettingRowTitle>
+          <HStack alignItems="center" gap="5px" style={{ width: 315 }}>
+            <Button
+              onClick={() => navigate('/settings/data/cloud')}
+            >
+              {t('settings.data.cloud.setup')}
+            </Button>
+          </HStack>
+        </SettingRow>
+      </SettingGroup>
     </SettingContainer>
   )
 }
@@ -434,5 +466,62 @@ const StyledIcon = styled(FileSearchOutlined)`
     color: var(--color-text-1);
   }
 `
+
+const DataSettings: FC = () => {
+  const { t } = useTranslation()
+  const { theme } = useTheme()
+  const { pathname } = useLocation()
+  const navigate = useNavigate()
+
+  const isRoute = (path: string): string => {
+    return pathname.includes(path) ? 'active' : ''
+  }
+
+  return (
+    <Container>
+      <SettingMenus>
+        <MenuItem
+          className={pathname === '/settings/data' ? 'active' : ''}
+          onClick={() => navigate('/settings/data')}
+        >
+          {t('settings.data.title')}
+        </MenuItem>
+        <MenuItem
+          className={isRoute('/settings/data/webdav')}
+          onClick={() => navigate('/settings/data/webdav')}
+        >
+          {t('settings.data.webdav.title')}
+        </MenuItem>
+        <MenuItem
+          className={isRoute('/settings/data/cloud')}
+          onClick={() => navigate('/settings/data/cloud')}
+        >
+          {t('settings.data.cloud.title')}
+        </MenuItem>
+        <MenuItem
+          className={isRoute('/settings/data/notion')}
+          onClick={() => navigate('/settings/data/notion')}
+        >
+          {t('settings.data.notion.title')}
+        </MenuItem>
+        <MenuItem
+          className={isRoute('/settings/data/yuque')}
+          onClick={() => navigate('/settings/data/yuque')}
+        >
+          {t('settings.data.yuque.title')}
+        </MenuItem>
+      </SettingMenus>
+      <ContentContainer>
+        <Routes>
+          <Route path="/" element={<DataHome />} />
+          <Route path="/webdav" element={<WebDavSettings />} />
+          <Route path="/cloud" element={<ZeaberSettings />} />
+          <Route path="/notion" element={<NotionSettings />} />
+          <Route path="/yuque" element={<YuqueSettings />} />
+        </Routes>
+      </ContentContainer>
+    </Container>
+  )
+}
 
 export default DataSettings

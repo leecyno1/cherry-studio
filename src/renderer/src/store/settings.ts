@@ -4,7 +4,7 @@ import { CodeStyleVarious, LanguageVarious, ThemeMode, TranslateLanguageVarious 
 
 export type SendMessageShortcut = 'Enter' | 'Shift+Enter' | 'Ctrl+Enter' | 'Command+Enter'
 
-export type SidebarIcon = 'assistants' | 'agents' | 'paintings' | 'translate' | 'minapp' | 'knowledge' | 'files'
+export type SidebarIcon = 'assistants' | 'agents' | 'paintings' | 'translate' | 'minapp' | 'knowledge' | 'files' | 'cloudKnowledge'
 
 export const DEFAULT_SIDEBAR_ICONS: SidebarIcon[] = [
   'assistants',
@@ -13,7 +13,8 @@ export const DEFAULT_SIDEBAR_ICONS: SidebarIcon[] = [
   'translate',
   'minapp',
   'knowledge',
-  'files'
+  'files',
+  'cloudKnowledge'
 ]
 
 export interface SettingsState {
@@ -193,6 +194,8 @@ const settingsSlice = createSlice({
     },
     setTheme: (state, action: PayloadAction<ThemeMode>) => {
       state.theme = action.payload
+      window.api?.setTheme(action.payload === ThemeMode.dark ? 'dark' : 'light')
+      localStorage.setItem('theme', action.payload)
     },
     setFontSize: (state, action: PayloadAction<number>) => {
       state.fontSize = action.payload

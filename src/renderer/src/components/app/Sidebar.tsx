@@ -3,7 +3,8 @@ import {
   FolderOutlined,
   PictureOutlined,
   QuestionCircleOutlined,
-  TranslationOutlined
+  TranslationOutlined,
+  CloudOutlined
 } from '@ant-design/icons'
 import { isMac } from '@renderer/config/constant'
 import { AppLogo, isLocalAi, UserAvatar } from '@renderer/config/env'
@@ -135,7 +136,8 @@ const MainMenus: FC = () => {
     translate: <TranslationOutlined />,
     minapp: <i className="iconfont icon-appstore" />,
     knowledge: <FileSearchOutlined />,
-    files: <FolderOutlined />
+    files: <FolderOutlined />,
+    cloudKnowledge: <CloudOutlined />
   }
 
   const pathMap = {
@@ -145,15 +147,16 @@ const MainMenus: FC = () => {
     translate: '/translate',
     minapp: '/apps',
     knowledge: '/knowledge',
-    files: '/files'
+    files: '/files',
+    cloudKnowledge: '/cloud-knowledge'
   }
 
-  return sidebarIcons.visible.map((icon) => {
-    const path = pathMap[icon]
-    const isActive = path === '/' ? isRoute(path) : isRoutes(path)
-
+  const renderCloudKnowledgeButton = () => {
+    const path = '/cloud-knowledge'
+    const isActive = pathname.startsWith(path) && !minappShow ? 'active' : ''
+    
     return (
-      <Tooltip key={icon} title={t(`${icon}.title`)} mouseEnterDelay={0.8} placement="right">
+      <Tooltip key="cloudKnowledge" title={t('cloudKnowledge.title')} mouseEnterDelay={0.8} placement="right">
         <StyledLink
           onClick={async () => {
             if (minappShow) {
@@ -161,11 +164,35 @@ const MainMenus: FC = () => {
             }
             navigate(path)
           }}>
-          <Icon className={isActive}>{iconMap[icon]}</Icon>
+          <Icon className={isActive}><CloudOutlined /></Icon>
         </StyledLink>
       </Tooltip>
     )
-  })
+  }
+
+  return (
+    <>
+      {sidebarIcons.visible.map((icon) => {
+        const path = pathMap[icon]
+        const isActive = path === '/' ? isRoute(path) : isRoutes(path)
+
+        return (
+          <Tooltip key={icon} title={t(`${icon}.title`)} mouseEnterDelay={0.8} placement="right">
+            <StyledLink
+              onClick={async () => {
+                if (minappShow) {
+                  await MinApp.close()
+                }
+                navigate(path)
+              }}>
+              <Icon className={isActive}>{iconMap[icon]}</Icon>
+            </StyledLink>
+          </Tooltip>
+        )
+      })}
+      {!sidebarIcons.visible.includes('cloudKnowledge') && renderCloudKnowledgeButton()}
+    </>
+  )
 }
 
 const PinnedApps: FC = () => {
@@ -214,6 +241,8 @@ const Container = styled.div`
   height: ${isMac ? 'calc(100vh - var(--navbar-height))' : '100vh'};
   -webkit-app-region: drag !important;
   margin-top: ${isMac ? 'var(--navbar-height)' : 0};
+  border-right: 1px solid rgba(255, 255, 255, 0.05);
+  box-shadow: 0 0 20px rgba(0, 132, 255, 0.1);
 `
 
 const AvatarImg = styled(Avatar)`
@@ -224,6 +253,7 @@ const AvatarImg = styled(Avatar)`
   margin-top: ${isMac ? '0px' : '2px'};
   border: none;
   cursor: pointer;
+  box-shadow: 0 0 10px rgba(0, 132, 255, 0.3);
 `
 
 const EmojiAvatar = styled.div`
@@ -239,8 +269,9 @@ const EmojiAvatar = styled.div`
   font-size: 16px;
   cursor: pointer;
   -webkit-app-region: none;
-  border: 0.5px solid var(--color-border);
+  border: 0.5px solid var(--color-primary-mute);
   font-size: 20px;
+  box-shadow: 0 0 10px rgba(0, 132, 255, 0.3);
 `
 
 const MainMenusContainer = styled.div`
@@ -258,38 +289,48 @@ const Menus = styled.div`
 `
 
 const Icon = styled.div`
-  width: 35px;
-  height: 35px;
+  width: 36px;
+  height: 36px;
+  border-radius: 10px;
   display: flex;
-  justify-content: center;
   align-items: center;
-  border-radius: 50%;
+  justify-content: center;
+  font-size: 20px;
+  color: var(--color-icon);
+  cursor: pointer;
+  transition: all 0.2s ease-in-out;
   -webkit-app-region: none;
-  border: 0.5px solid transparent;
-  .iconfont,
-  .anticon {
-    color: var(--color-icon);
-    font-size: 20px;
-    text-decoration: none;
-  }
-  .anticon {
-    font-size: 17px;
-  }
+  margin-bottom: 8px;
+  position: relative;
+  backdrop-filter: blur(5px);
+
   &:hover {
     background-color: var(--color-hover);
-    cursor: pointer;
-    .iconfont,
-    .anticon {
-      color: var(--color-icon-white);
+    color: var(--color-icon-white);
+  }
+
+  &:active {
+    background-color: var(--color-active);
+  }
+
+  &.active {
+    background-color: var(--color-primary);
+    color: var(--color-icon-white);
+    position: relative;
+    
+    &::after {
+      content: '';
+      position: absolute;
+      right: -12px;
+      width: 3px;
+      height: 20px;
+      background: var(--color-primary);
+      border-radius: 2px;
     }
   }
-  &.active {
-    background-color: var(--color-active);
-    border: 0.5px solid var(--color-border);
-    .iconfont,
-    .anticon {
-      color: var(--color-icon-white);
-    }
+
+  .iconfont.icon-chat {
+    transform: scale(0.9);
   }
 `
 

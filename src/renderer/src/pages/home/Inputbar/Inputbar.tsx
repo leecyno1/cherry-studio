@@ -632,7 +632,7 @@ const Inputbar: FC<Props> = ({ assistant: _assistant, setActiveTopic }) => {
   }
 
   return (
-    <Container onDragOver={handleDragOver} onDrop={handleDrop} className="inputbar">
+    <Container onDragOver={handleDragOver} onDrop={handleDrop} className="inputbar" expended={expended}>
       <NarrowLayout style={{ width: '100%' }}>
         <InputBarContainer
           id="inputbar"
@@ -784,9 +784,61 @@ const DragHandle = styled.div`
   }
 `
 
-const Container = styled.div`
+const Container = styled.div<{ expended: boolean }>`
+  width: 100%;
+  position: relative;
+  padding: 10px 20px 15px 20px;
+  padding-right: ${({ expended }) => (expended ? '50px' : '20px')};
+  background: var(--color-background);
   display: flex;
   flex-direction: column;
+  border-top: 1px solid rgba(0, 132, 255, 0.05);
+  transition: all 0.5s cubic-bezier(0.075, 0.82, 0.165, 1);
+  z-index: 100;
+  box-shadow: 0 -5px 20px rgba(0, 0, 0, 0.1);
+  
+  .ant-input {
+    background-color: var(--color-background-mute);
+    border: 1px solid var(--color-border);
+    transition: all 0.2s ease-in-out;
+    color: var(--color-text);
+    border-radius: 8px;
+    box-shadow: inset 0 0 5px rgba(0, 132, 255, 0.05);
+    
+    &:hover, &:focus {
+      border-color: var(--color-primary);
+      box-shadow: 0 0 0 2px rgba(0, 132, 255, 0.1);
+    }
+  }
+  
+  .input-toolbar {
+    position: relative;
+    padding-top: 5px;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    transition: all 0.2s ease;
+    
+    &::before {
+      content: '';
+      position: absolute;
+      left: 0;
+      top: 0;
+      width: 30%;
+      height: 1px;
+      background: linear-gradient(to right, var(--color-primary-mute) 0%, transparent 100%);
+    }
+  }
+  
+  .buttons-group .ant-btn {
+    transition: all 0.2s ease;
+    
+    &:hover {
+      transform: translateY(-1px);
+      background-color: var(--color-hover);
+      color: var(--color-primary);
+    }
+  }
 `
 
 const InputBarContainer = styled.div`

@@ -17,6 +17,7 @@ import AppsPage from './pages/apps/AppsPage'
 import FilesPage from './pages/files/FilesPage'
 import HomePage from './pages/home/HomePage'
 import KnowledgePage from './pages/knowledge/KnowledgePage'
+import CloudKnowledgePage from './pages/cloud-knowledge/CloudKnowledgePage'
 import PaintingsPage from './pages/paintings/PaintingsPage'
 import SettingsPage from './pages/settings/SettingsPage'
 import TranslatePage from './pages/translate/TranslatePage'
@@ -40,6 +41,7 @@ function App(): JSX.Element {
                       <Route path="/translate" element={<TranslatePage />} />
                       <Route path="/files" element={<FilesPage />} />
                       <Route path="/knowledge" element={<KnowledgePage />} />
+                      <Route path="/cloud-knowledge" element={<CloudKnowledgePage />} />
                       <Route path="/apps" element={<AppsPage />} />
                       <Route path="/settings/*" element={<SettingsPage />} />
                     </Routes>

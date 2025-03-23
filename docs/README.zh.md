@@ -9,23 +9,24 @@
 <div align="center">
  <a href="https://trendshift.io/repositories/11772" target="_blank"><img src="https://trendshift.io/api/badge/repositories/11772" alt="kangfenmao%2Fcherry-studio | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 </div>
-# 🍒 Cherry Studio
+# 🤖 Jarvis
 
-Cherry Studio 是一款支持多个大语言模型（LLM）服务商的桌面客户端，兼容 Windows、Mac 和 Linux 系统。
+Jarvis 是一款支持多个大语言模型（LLM）服务商的桌面客户端，兼容 Windows、Mac 和 Linux 系统。它采用了先进的科技风格界面设计，为用户提供更加智能和直观的交互体验。
 
 👏 欢迎加入 [Telegram 群组](https://t.me/CherryStudioAI)｜[Discord](https://discord.gg/wez8HtpxqQ) | [QQ群(1025067911)](https://qm.qq.com/q/RIBAO2pPKS)
 
-❤️ 喜欢 Cherry Studio? 点亮小星星 🌟 或 [赞助开发者](sponsor.md)! ❤️
+❤️ 喜欢 Jarvis? 点亮小星星 🌟 或 [赞助开发者](sponsor.md)! ❤️
 
-# 🌠 界面
+# 🌠 界面特点
 
-![](https://github.com/user-attachments/assets/28585d83-4bf0-4714-b561-8c7bf57cc600)
-![](https://github.com/user-attachments/assets/8576863a-f632-4776-bc12-657eeced9da3)
-![](https://github.com/user-attachments/assets/790790d7-b462-48dd-bde1-91c1697a4648)
+- 科技感十足的蓝色主题
+- 流畅的动画过渡效果
+- 智能的布局适配
+- 现代化的UI组件设计
+- 清晰的信息层级展示
+- 沉浸式的用户体验
 
 # 🌟 主要特性
-
-![](https://github.com/user-attachments/assets/995910f3-177a-4d1e-97ea-04e3b009ba36)
 
 1. **多样化 LLM 服务支持**：
 
@@ -111,7 +112,7 @@ $ yarn build:linux
 
 # 🤝 贡献
 
-我们欢迎对 Cherry Studio 的贡献！您可以通过以下方式贡献：
+我们欢迎对 Jarvis 的贡献！您可以通过以下方式贡献：
 
 1. **贡献代码**：开发新功能或优化现有代码。
 2. **修复错误**：提交您发现的错误修复。
@@ -119,7 +120,7 @@ $ yarn build:linux
 4. **产品设计**：参与设计讨论。
 5. **撰写文档**：改进用户手册和指南。
 6. **社区参与**：加入讨论并帮助用户。
-7. **推广使用**：宣传 Cherry Studio。
+7. **推广使用**：宣传 Jarvis。
 
 ## 入门
 
@@ -149,7 +150,7 @@ $ yarn build:linux
 
 # 📣 产品猎人
 
-<a href="https://www.producthunt.com/posts/cherry-studio?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-cherry&#0045;studio" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=496640&theme=light" alt="Cherry&#0032;Studio - AI&#0032;Chatbots&#0044;&#0032;AI&#0032;Desktop&#0032;Client | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+<a href="https://www.producthunt.com/posts/jarvis?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-jarvis" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=496640&theme=light" alt="Jarvis - AI&#0032;Chatbots&#0044;&#0032;AI&#0032;Desktop&#0032;Client | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 
 # ☕ 赞助
 

@@ -1,4 +1,4 @@
-import store, { useAppDispatch, useAppSelector } from '@renderer/store'
+import store, { RootState, useAppDispatch, useAppSelector } from '@renderer/store'
 import {
   SendMessageShortcut,
   setSendMessageShortcut as _setSendMessageShortcut,
@@ -12,10 +12,29 @@ import {
   setWindowStyle
 } from '@renderer/store/settings'
 import { SidebarIcon, ThemeMode, TranslateLanguageVarious } from '@renderer/types'
+import * as React from 'react'
+import { useSelector } from 'react-redux'
 
 export function useSettings() {
   const settings = useAppSelector((state) => state.settings)
   const dispatch = useAppDispatch()
+
+  // 添加cloudKnowledge到侧边栏
+  const updateSidebarIcons = () => {
+    // 检查并添加cloudKnowledge
+    if (!settings.sidebarIcons.visible.includes('cloudKnowledge')) {
+      const newVisible = [...settings.sidebarIcons.visible, 'cloudKnowledge']
+      dispatch(setSidebarIcons({
+        visible: newVisible,
+        disabled: settings.sidebarIcons.disabled
+      }))
+    }
+  }
+  
+  // 在组件初始化时执行一次
+  React.useEffect(() => {
+    updateSidebarIcons()
+  }, [])
 
   return {
     ...settings,

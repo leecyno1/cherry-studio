@@ -10,9 +10,9 @@
   --color-white-soft: rgba(255, 255, 255, 0.8);
   --color-white-mute: rgba(255, 255, 255, 0.94);
 
-  --color-black: #151515;
-  --color-black-soft: #222222;
-  --color-black-mute: #333333;
+  --color-black: #0c1220;
+  --color-black-soft: #121c2e;
+  --color-black-mute: #1e2a45;
 
   --color-gray-1: #515c67;
   --color-gray-2: #414853;
@@ -25,12 +25,12 @@
   --color-background: var(--color-black);
   --color-background-soft: var(--color-black-soft);
   --color-background-mute: var(--color-black-mute);
-  --color-background-opacity: rgba(34, 34, 34, 0.7);
-  --inner-glow-opacity: 0.3; // For the glassmorphism effect in the dropdown menu
+  --color-background-opacity: rgba(12, 18, 32, 0.7);
+  --inner-glow-opacity: 0.4; // For the glassmorphism effect in the dropdown menu
 
-  --color-primary: #00b96b;
-  --color-primary-soft: #00b96b99;
-  --color-primary-mute: #00b96b33;
+  --color-primary: #0084ff;
+  --color-primary-soft: #0084ff99;
+  --color-primary-mute: #0084ff33;
 
   --color-text: var(--color-text-1);
   --color-icon: #ffffff99;
@@ -39,19 +39,19 @@
   --color-border-soft: #ffffff11;
   --color-border-mute: #ffffff11;
   --color-error: #f44336;
-  --color-link: #1677ff;
-  --color-code-background: #323232;
-  --color-hover: rgba(40, 40, 40, 1);
-  --color-active: rgba(55, 55, 55, 1);
-  --color-frame-border: #333;
+  --color-link: #42a5f5;
+  --color-code-background: #162032;
+  --color-hover: rgba(30, 50, 80, 1);
+  --color-active: rgba(40, 65, 95, 1);
+  --color-frame-border: #2a3a5a;
   --color-group-background: var(--color-background-soft);
 
-  --color-reference: #404040;
+  --color-reference: #2a3a5a;
   --color-reference-text: #ffffff;
-  --color-reference-background: #0b0e12;
+  --color-reference-background: #0b1525;
 
-  --navbar-background-mac: rgba(30, 30, 30, 0.6);
-  --navbar-background: rgba(30, 30, 30);
+  --navbar-background-mac: rgba(12, 18, 32, 0.6);
+  --navbar-background: rgba(12, 18, 32, 0.95);
 
   --navbar-height: 40px;
   --sidebar-width: 50px;
@@ -62,12 +62,12 @@
   --topic-list-width: 275px;
   --settings-width: 250px;
 
-  --chat-background: #111111;
-  --chat-background-user: #28b561;
-  --chat-background-assistant: #2c2c2c;
-  --chat-text-user: var(--color-black);
+  --chat-background: #0a101c;
+  --chat-background-user: #0084ff;
+  --chat-background-assistant: #1e2a45;
+  --chat-text-user: var(--color-white);
 
-  --list-item-border-radius: 16px;
+  --list-item-border-radius: 12px;
 }
 
 body[theme-mode='light'] {
@@ -93,9 +93,9 @@ body[theme-mode='light'] {
   --color-background-opacity: rgba(235, 235, 235, 0.7);
   --inner-glow-opacity: 0.1;
 
-  --color-primary: #00b96b;
-  --color-primary-soft: #00b96b99;
-  --color-primary-mute: #00b96b33;
+  --color-primary: #0084ff;
+  --color-primary-soft: #0084ff99;
+  --color-primary-mute: #0084ff33;
 
   --color-text: var(--color-text-1);
   --color-icon: #00000099;
@@ -104,24 +104,24 @@ body[theme-mode='light'] {
   --color-border-soft: #00000020;
   --color-border-mute: #00000010;
   --color-error: #f44336;
-  --color-link: #1677ff;
-  --color-code-background: #e3e3e3;
+  --color-link: #0084ff;
+  --color-code-background: #e3eaf7;
   --color-hover: var(--color-white-mute);
   --color-active: var(--color-white-soft);
-  --color-frame-border: #ddd;
+  --color-frame-border: #d0e1ff;
   --color-group-background: var(--color-white);
 
-  --color-reference: #cfe1ff;
+  --color-reference: #d0e1ff;
   --color-reference-text: #000000;
   --color-reference-background: #f1f7ff;
 
   --navbar-background-mac: rgba(255, 255, 255, 0.6);
   --navbar-background: rgba(255, 255, 255);
 
-  --chat-background: #f3f3f3;
-  --chat-background-user: #95ec69;
+  --chat-background: #f3f7ff;
+  --chat-background-user: #0084ff;
   --chat-background-assistant: #ffffff;
-  --chat-text-user: var(--color-text);
+  --chat-text-user: var(--color-white);
 }
 
 *,

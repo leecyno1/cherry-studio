@@ -9,19 +9,22 @@
 <div align="center">
  <a href="https://trendshift.io/repositories/11772" target="_blank"><img src="https://trendshift.io/api/badge/repositories/11772" alt="kangfenmao%2Fcherry-studio | Trendshift" style="width: 250px; height: 55px;" width="250" height="55"/></a>
 </div>
-# 🍒 Cherry Studio
+# 🤖 Jarvis
 
-Cherry Studioは、複数のLLMプロバイダーをサポートするデスクトップクライアントで、Windows、Mac、Linuxで利用可能です。
+Jarvisは、複数のLLMプロバイダーをサポートするデスクトップクライアントで、Windows、Mac、Linuxで利用可能です。最先端のテクノロジカルなインターフェースデザインを採用し、より直感的でインテリジェントなユーザー体験を提供します。
 
 👏 [Telegram](https://t.me/CherryStudioAI)｜[Discord](https://discord.gg/wez8HtpxqQ) | [QQグループ(1025067911)](https://qm.qq.com/q/RIBAO2pPKS)
 
-❤️ Cherry Studioをお気に入りにしましたか？小さな星をつけてください 🌟 または [スポンサー](sponsor.md) をして開発をサポートしてください！❤️
+❤️ Jarvisをお気に入りにしましたか？小さな星をつけてください 🌟 または [スポンサー](sponsor.md) をして開発をサポートしてください！❤️
 
-# 🌠 スクリーンショット
+# 🌠 インターフェースの特徴
 
-![](https://github.com/user-attachments/assets/28585d83-4bf0-4714-b561-8c7bf57cc600)
-![](https://github.com/user-attachments/assets/8576863a-f632-4776-bc12-657eeced9da3)
-![](https://github.com/user-attachments/assets/790790d7-b462-48dd-bde1-91c1697a4648)
+- テクノロジカルなブルーテーマ
+- スムーズなアニメーション効果
+- インテリジェントなレイアウト適応
+- モダンなUIコンポーネントデザイン
+- 明確な情報階層表示
+- 没入型ユーザー体験
 
 # 🌟 主な機能
 
@@ -111,7 +114,7 @@ $ yarn build:linux
 
 # 🤝 貢献
 
-Cherry Studioへの貢献を歓迎します！以下の方法で貢献できます：
+Jarvisへの貢献を歓迎します！以下の方法で貢献できます：
 
 1. **コードの貢献**：新機能を開発するか、既存のコードを最適化します。
 2. **バグの修正**：見つけたバグを修正します。
@@ -119,7 +122,7 @@ Cherry Studioへの貢献を歓迎します！以下の方法で貢献できま�
 4. **製品デザイン**：デザインの議論に参加します。
 5. **ドキュメントの作成**：ユーザーマニュアルやガイドを改善します。
 6. **コミュニティの参加**：ディスカッションに参加し、ユーザーを支援します。
-7. **使用の促進**：Cherry Studioを広めます。
+7. **使用の促進**：Jarvisを広めます。
 
 ## 始め方
 
@@ -148,7 +151,7 @@ Cherry Studioへの貢献を歓迎します！以下の方法で貢献できま�
 
 # 📣 プロダクトハント
 
-<a href="https://www.producthunt.com/posts/cherry-studio?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-cherry&#0045;studio" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=496640&theme=light" alt="Cherry&#0032;Studio - AI&#0032;Chatbots&#0044;&#0032;AI&#0032;Desktop&#0032;Client | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
+<a href="https://www.producthunt.com/posts/jarvis?embed=true&utm_source=badge-featured&utm_medium=badge&utm_souce=badge-jarvis" target="_blank"><img src="https://api.producthunt.com/widgets/embed-image/v1/featured.svg?post_id=496640&theme=light" alt="Jarvis - AI&#0032;Chatbots&#0044;&#0032;AI&#0032;Desktop&#0032;Client | Product Hunt" style="width: 250px; height: 54px;" width="250" height="54" /></a>
 
 # スポンサー
 

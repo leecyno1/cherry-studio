@@ -89,7 +89,7 @@ export class WindowService {
       width,
       height,
       autoHideMenuBar: true,
-      title: 'Cherry Studio',
+      title: 'Jarvis',
       ...windowOptions,
       parent,
       webPreferences: {

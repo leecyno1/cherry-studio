@@ -7,9 +7,10 @@ interface ListItemProps {
   title: string
   subtitle?: string
   onClick?: () => void
+  extra?: ReactNode
 }
 
-const ListItem = ({ active, icon, title, subtitle, onClick }: ListItemProps) => {
+const ListItem = ({ active, icon, title, subtitle, onClick, extra }: ListItemProps) => {
   return (
     <ListItemContainer className={active ? 'active' : ''} onClick={onClick}>
       <ListItemContent>
@@ -19,6 +20,7 @@ const ListItem = ({ active, icon, title, subtitle, onClick }: ListItemProps) => 
           {subtitle && <SubtitleText>{subtitle}</SubtitleText>}
         </TextContainer>
       </ListItemContent>
+      {extra && <ExtraContent>{extra}</ExtraContent>}
     </ListItemContainer>
   )
 }
@@ -28,8 +30,9 @@ const ListItemContainer = styled.div`
   border-radius: var(--list-item-border-radius);
   font-size: 13px;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: space-between;
+  align-items: center;
   position: relative;
   font-family: Ubuntu;
   cursor: pointer;
@@ -51,6 +54,13 @@ const ListItemContent = styled.div`
   gap: 8px;
   overflow: hidden;
   font-size: 13px;
+  flex: 1;
+`
+
+const ExtraContent = styled.div`
+  display: flex;
+  align-items: center;
+  margin-left: 8px;
 `
 
 const IconWrapper = styled.span`

@@ -684,6 +684,56 @@
           "title": "语雀配置",
           "token": "语雀 Token",
           "token_placeholder": "请输入语雀Token"
+        },
+        "backup": {
+          "title": "备份到文件",
+          "description": "备份你的助手、话题和设置数据到指定路径",
+          "button": "备份"
+        },
+        "restore": {
+          "title": "从文件恢复",
+          "button": "恢复",
+          "description": "从备份文件恢复助手、话题和设置数据",
+          "content": "从备份文件恢复数据将覆盖当前数据，是否继续？"
+        },
+        "reset": {
+          "title": "重置数据",
+          "button": "重置",
+          "clean_fs_cache": "清除文件缓存",
+          "content": "重置将清除所有的助手、话题和设置数据，是否继续？",
+          "description": "重置所有数据到初始状态",
+          "fs_cache_reset_success": "文件缓存清除成功"
+        },
+        "stats": {
+          "title": "统计数据",
+          "storage_used": "存储空间"
+        },
+        "sync": {
+          "title": "数据同步"
+        },
+        "cloud": {
+          "title": "云端知识库",
+          "setup": "设置Zeaber云端",
+          "api_key": "API 密钥",
+          "api_key_placeholder": "请输入 Zeaber API 密钥",
+          "api_key_saved": "API 密钥已保存",
+          "api_url": "API 地址",
+          "api_url_placeholder": "例如：https://api.zeaber.com",
+          "api_url_saved": "API 地址已保存",
+          "connection": "连接测试",
+          "test_connection": "测试连接",
+          "connection_successful": "连接成功",
+          "connection_failed": "连接失败",
+          "empty_api_key": "请输入 API 密钥",
+          "empty_api_url": "请输入 API 地址",
+          "valid": "连接有效",
+          "help": "使用说明",
+          "help_text_1": "Zeaber是一个云端知识库服务，可以帮助您将本地知识库同步到云端，随时随地访问。",
+          "help_text_2": "设置步骤：",
+          "help_step_1": "注册Zeaber账号并创建API密钥",
+          "help_step_2": "将API密钥和API地址填入上方表单",
+          "help_step_3": "测试连接，确保配置正确",
+          "learn_more": "了解更多关于Zeaber的信息"
         }
       },
       "display.custom.css": "自定义 CSS",
@@ -990,6 +1040,35 @@
         "copying_files": "复制文件... {{progress}}%",
         "completed": "恢复完成"
       }
+    },
+    "cloudKnowledge": {
+      "title": "云端知识库",
+      "upload": "上传到云端",
+      "upload_success": "上传成功",
+      "upload_failed": "上传失败",
+      "sync": "同步",
+      "sync_success": "同步成功",
+      "sync_failed": "同步失败",
+      "fetch_failed": "获取云端知识库失败",
+      "search": "搜索",
+      "search_failed": "搜索失败",
+      "add": "新增",
+      "empty": "暂无云端知识库",
+      "delete_success": "删除成功",
+      "delete_failed": "删除失败",
+      "visualization": "可视化"
+    },
+    "visualization": {
+      "title": "知识库可视化",
+      "zoom_in": "放大",
+      "zoom_out": "缩小",
+      "download": "下载SVG",
+      "fullscreen": "全屏",
+      "exit_fullscreen": "退出全屏",
+      "load_error": "加载可视化数据失败",
+      "no_data": "暂无可视化数据",
+      "loading": "正在生成可视化图形",
+      "view": "查看可视化"
     }
   }
 }
